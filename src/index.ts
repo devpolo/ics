@@ -1,10 +1,13 @@
 import express from "express"
 
+import { handleErrors } from "./middlewares/errors"
+
 const app = express()
 
 const port = process.env.PORT || 5000
 
-app.get("/", (_, res) => {
-  res.status(200).send({ message: "OK" })
-})
+app.use("/", require("./routes/api/index"))
+
+app.use(handleErrors)
+
 app.listen(port, () => console.log(`Running on port ${port}`))
