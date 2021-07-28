@@ -6,9 +6,10 @@
   "author": "DevPolo <paul.crussaire@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
+  "tsc": "tsc",
   "scripts": {
-    "build": "tsc",
-    "start": "tsc & node .",
+    "build": "npm run tsc",
+    "start": "npm run tsc & node .",
     "dev": "tsc -w & nodemon ."
   },
   "dependencies": {
