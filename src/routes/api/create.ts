@@ -33,4 +33,28 @@ router.post(
   }
 )
 
+router.post(
+  "/download",
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const body: CalendarOptions = req.body
+
+      const config = {
+        ...body,
+        start: new Date(body.start),
+        end: new Date(body.end),
+      }
+
+      const icalendar = new ICalendar(config)
+
+      res.setHeader("Content-type", "text/calendar")
+      res.charset = "UTF-8"
+      res.write(icalendar.render())
+      res.end()
+    } catch (error) {
+      next(error)
+    }
+  }
+)
+
 module.exports = router
