@@ -13,7 +13,7 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.post(
-  "/create",
+  "/string",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const body: CalendarOptions = req.body
