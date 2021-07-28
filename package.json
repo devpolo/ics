@@ -12,6 +12,7 @@
     "dev": "tsc -w & nodemon ."
   },
   "dependencies": {
+    "datebook": "^6.5.7",
     "express": "^4.17.1"
   },
   "devDependencies": {
