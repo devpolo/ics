@@ -2,10 +2,15 @@
   "name": "ics",
   "version": "1.0.0",
   "description": "my virtual classroom open source project",
-  "main": "index.ts",
   "repository": "git@github.com:devpolo/ics.git",
   "author": "DevPolo <paul.crussaire@gmail.com>",
   "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc & node .",
+    "dev": "tsc -w & nodemon ."
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
