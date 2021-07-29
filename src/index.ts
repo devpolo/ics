@@ -10,6 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use("/create", require("./routes/api/create"))
+app.use("/email", require("./routes/api/email"))
 
 app.use(handleErrors)
 
